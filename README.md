@@ -21,7 +21,6 @@ The portfolio is a lightweight, responsive static website built with semantic HT
 
 Visit [faheem-shah-umer.github.io](https://faheem-shah-umer.github.io/) to explore the portfolio.
 
-
 ## Contact
 
 - [LinkedIn](https://www.linkedin.com/in/faheemshahumer)
