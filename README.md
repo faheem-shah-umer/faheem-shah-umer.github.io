@@ -1,8 +1,8 @@
 # Faheem Shah Umer — Portfolio
 
-This repository contains the source code and public assets for [Faheem Shah Umer's portfolio](https://faheem-shah-umer.github.io/).
+This repository contains the source code for [Faheem Shah Umer's portfolio](https://faheem-shah-umer.github.io/).
 
-The website presents his work as an AI, LLM, and mechatronics engineer, with a focus on agentic systems, retrieval-augmented generation, engineering knowledge systems, automotive development, and product engineering.
+The website presents My work as an AI, LLM, and mechatronics engineer, with a focus on agentic systems, retrieval-augmented generation, engineering knowledge systems, automotive development, and product engineering.
 
 ## What the portfolio includes
 
@@ -21,15 +21,6 @@ The portfolio is a lightweight, responsive static website built with semantic HT
 
 Visit [faheem-shah-umer.github.io](https://faheem-shah-umer.github.io/) to explore the portfolio.
 
-## Run locally
-
-Clone the repository and start a local web server from its root directory:
-
-```powershell
-python -m http.server 8000
-```
-
-Then open `http://localhost:8000` in a browser.
 
 ## Contact
 
