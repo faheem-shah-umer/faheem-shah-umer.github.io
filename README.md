@@ -1,11 +1,19 @@
 # Faheem Shah Umer — Portfolio
 
-A responsive bilingual portfolio for an AI and mechatronics engineer, built as a dependency-free static site for GitHub Pages.
+Personal portfolio for an AI, LLM, and mechatronics engineer working across agentic systems, RAG, automotive engineering, and product development.
 
-## Publishing
+Live site: [faheem-shah-umer.github.io](https://faheem-shah-umer.github.io/)
 
-1. Rename the GitHub repository to `faheem-shah-umer.github.io` for a root user site.
-2. In **Settings → Pages**, choose **Deploy from a branch**.
-3. Select the `main` branch and `/ (root)` folder.
+## Run locally
 
-The site can also run as a project site without renaming, at `/faheemshahumer.github.io/`, because all asset links are relative.
+This is a dependency-free static website. From the repository folder, run:
+
+```powershell
+python -m http.server 8000
+```
+
+Then open `http://localhost:8000`.
+
+## Deploy
+
+GitHub Pages publishes the `main` branch from the repository root. Changes appear on the live site after they are committed and pushed.
