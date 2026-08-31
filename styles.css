@@ -29,7 +29,7 @@ nav a:hover::after, nav a:focus-visible::after, nav a[aria-current="true"]::afte
 .hero { position: relative; min-height: 1360px; overflow: hidden; padding: 9rem 1.5rem 4rem; background: linear-gradient(180deg,#fff 0%,#f8f8f5 72%,#eeeee8 100%); }
 html[lang="de"] .hero { min-height: 1540px; }
 .name-track { position: absolute; top: 4.2rem; left: 0; display: flex; width: max-content; white-space: nowrap; animation: marquee 28s linear infinite; }
-.name-track span { padding-right: 6vw; font-size: clamp(7rem,15vw,15rem); font-weight: 900; letter-spacing: -.085em; line-height: .82; }
+.name-track span { padding-right: 6vw; font-size: clamp(5.75rem,12vw,12rem); font-weight: 900; letter-spacing: -.085em; line-height: .82; }
 .hero-portrait-wrap { position: absolute; z-index: 3; top: 13.8rem; left: 50%; width: min(34rem,44vw); aspect-ratio: 1; overflow: hidden; border: 10px solid var(--white); border-radius: 48px; box-shadow: 0 35px 80px rgba(32,27,60,.18); transform: translateX(-50%) rotate(-1deg); }
 .hero-portrait { width: 100%; height: 100%; object-fit: cover; object-position: center top; transform: scale(1.01); }
 .hero-copy { position: absolute; z-index: 6; right: 1rem; bottom: 9rem; left: 1rem; width: min(850px,calc(100% - 2rem)); margin-inline: auto; text-align: center; }
@@ -153,4 +153,10 @@ footer { min-height: 120px; display: grid; grid-template-columns: 1fr auto 1fr; 
 @media (max-width: 700px) { html[lang="de"] .hero { min-height: 1560px; } }
 @media (min-width: 701px) and (max-width: 980px) { .hero { min-height: 1440px; }.stack-card[open] .tool-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
 @media (max-width: 700px) { .stack-card[open] .tool-grid { grid-template-columns: 1fr; } }
+@media (max-width: 700px) {
+  .hero { min-height: 1180px; }
+  html[lang="de"] .hero { min-height: 1320px; }
+  .name-track span { font-size: 17vw; }
+  .hero-copy { top: 44.5rem; bottom: auto; }
+}
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation: none !important; transition: none !important; }.reveal { opacity: 1; transform: none; } }
