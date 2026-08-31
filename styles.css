@@ -129,6 +129,24 @@ footer { min-height: 120px; display: grid; grid-template-columns: 1fr auto 1fr; 
 @media (max-width: 700px) {
   :root { --radius-xl: 34px; --radius-lg: 28px; }.site-header { grid-template-columns: 1fr auto; }.site-header nav { display: none; }.hero { min-height: 1040px; }.name-track { top: 7rem; }.name-track span { font-size: 21vw; }.hero-portrait-wrap { top: 13.6rem; width: min(78vw,430px); border-width: 7px; border-radius: 35px; }.hero-copy { top: 44rem; }.hero-role { font-size: 1rem; }.hero-proof { top: 36.5rem; left: 1rem; grid-template-columns: auto 105px; }.hero-proof strong { font-size: 2.5rem; }.hero-proof span { font-size: .66rem; }.hero-cta { top: 36rem; right: .7rem; width: 168px; min-height: 70px; padding: 1.1rem; font-size: .72rem; }.shape-sphere { top: 13rem; left: -1rem; width: 82px; height: 82px; }.shape-cube { top: 25rem; right: -1rem; width: 78px; height: 78px; }.shape-cylinder { top: 29rem; left: 2%; width: 52px; height: 102px; }.shape-pyramid { display: none; }.hero-tags { bottom: 1.3rem; }.section { padding-top: 6rem; padding-bottom: 6rem; }.section-heading h2, .resume-section h2, .contact-section h2 { font-size: clamp(2.9rem,14vw,4.4rem); }.about-layout, .metrics-grid, .stack-grid, .education-grid { grid-template-columns: 1fr; }.about-card-main, .credentials-card { grid-column: auto; }.about-card { min-height: 340px; transform: none; }.about-card-focus { transform: none; }.metrics-grid div { min-height: 150px; }.project { min-height: auto; }.project-copy { padding: 2rem 1.4rem 2.5rem; }.project h3 { font-size: 2.6rem; }.agent-visual, .rag-visual, .sity-visual { min-height: 390px; margin: .8rem; border-radius: 27px; }.agent-node { width: 58px; height: 58px; border-radius: 17px; }.agent-core { width: 120px; height: 120px; }.agent-core small { margin-top: -1.8rem; }.rag-score { width: 150px; height: 150px; }.rag-score strong { font-size: 2.3rem; }.compact-project { grid-template-columns: 42px 1fr; gap: 1rem; }.compact-tech { grid-column: 2; justify-self: start; }.timeline-item summary { grid-template-columns: 1fr 44px; }.timeline-year { grid-column: 1 / -1; }.timeline-content { padding: 0 0 2rem; }.stack-card summary { min-height: 210px; grid-template-columns: 82px 1fr 38px; gap: .9rem; padding: 1.2rem; }.stack-orb { width: 76px; height: 76px; border-radius: 22px; font-size: 1.15rem; }.stack-toggle { width: 38px; height: 38px; }.tool-grid { grid-template-columns: 1fr; padding: 0 1.2rem 1.2rem; }.education-card { min-height: 400px; }.credentials-card { min-height: 480px; }.language-levels { flex-direction: column; }.resume-shape-one { left: -2rem; bottom: 7%; width: 100px; height: 100px; }.resume-shape-two { top: 10%; right: -2rem; width: 105px; height: 105px; }.contact-actions { flex-direction: column; width: min(320px,100%); }.contact-actions .button { width: 100%; }footer { grid-template-columns: 1fr; justify-items: center; text-align: center; }footer p:last-child { justify-self: center; }
 }
+@media (max-width: 700px) {
+  .site-header, .site-header.is-scrolled { top: .5rem; width: calc(100% - 1rem); grid-template-columns: 46px minmax(0,1fr) 46px; padding: .55rem .65rem .7rem; border-radius: 30px; }
+  .site-header .brand { grid-column: 1; grid-row: 1; }
+  .site-header .language-toggle { grid-column: 3; grid-row: 1; }
+  .site-header nav { grid-column: 1 / -1; grid-row: 2; display: flex; justify-content: space-between; gap: clamp(.4rem,2vw,.7rem); width: 100%; overflow-x: auto; padding: .05rem .1rem; scrollbar-width: none; }
+  .site-header nav::-webkit-scrollbar { display: none; }
+  .site-header nav a { flex: 0 0 auto; font-size: .6rem; }
+  .site-header nav a:nth-child(4), .site-header nav a:nth-child(5) { display: block; }
+  .hero { min-height: 1100px; }
+  .name-track { top: 10rem; }
+  .hero-portrait-wrap { top: 16.6rem; }
+  .shape-sphere { top: 16rem; }
+  .shape-cube { top: 28rem; }
+  .shape-cylinder { top: 32rem; }
+  .hero-proof { top: 39.5rem; }
+  .hero-cta { top: 39rem; }
+  .hero-copy { top: 47rem; }
+}
 @media (min-width: 701px) and (max-width: 980px) { .stack-card[open] .tool-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
 @media (max-width: 700px) { .stack-card[open] .tool-grid { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation: none !important; transition: none !important; }.reveal { opacity: 1; transform: none; } }
