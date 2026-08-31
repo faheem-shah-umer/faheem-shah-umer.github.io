@@ -25,3 +25,11 @@ Visit [faheem-shah-umer.github.io](https://faheem-shah-umer.github.io/) to explo
 
 - [LinkedIn](https://www.linkedin.com/in/faheemshahumer)
 - [faheemshahumer@gmail.com](mailto:faheemshahumer@gmail.com)
+
+## Usage and copyright
+
+Copyright © 2026 Faheem Shah Umer Vattam Kandathil. All rights reserved.
+
+This portfolio is publicly accessible for viewing, but it is not an open-source project. No permission is granted to copy, modify, distribute, sublicense, sell, or commercially use its original source code, design, text, photographs, documents, or other original materials without prior written permission. See [LICENSE](LICENSE) for the complete notice.
+
+Third-party fonts, product names, trademarks, logos, and icons remain subject to their owners' respective terms. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
