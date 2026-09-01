@@ -1,4 +1,5 @@
 const root = document.documentElement;
+root.classList.add("has-js");
 const languageButton = document.querySelector("[data-language-toggle]");
 const description = document.querySelector('meta[name="description"]');
 const ogDescription = document.querySelector('meta[property="og:description"]');
@@ -42,6 +43,31 @@ const revealObserver = new IntersectionObserver((entries, observer) => {
   });
 }, { threshold: .12 });
 document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
+
+const characterEntrances = [
+  { anchor: document.querySelector("#experience"), character: document.querySelector(".character-divider-projects") },
+  { anchor: document.querySelector("#contact"), character: document.querySelector(".contact-character") }
+].filter(({ anchor, character }) => anchor && character);
+
+const characterObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) return;
+    const entrance = characterEntrances.find(({ anchor }) => anchor === entry.target);
+    entrance?.character.classList.add("is-visible");
+    observer.unobserve(entry.target);
+  });
+}, { rootMargin: "0px 0px -14%", threshold: .02 });
+characterEntrances.forEach(({ anchor }) => characterObserver.observe(anchor));
+
+const contactCharacter = document.querySelector(".contact-character");
+document.querySelectorAll(".contact-actions a").forEach((link) => {
+  const engage = () => contactCharacter?.classList.add("is-engaged");
+  const release = () => contactCharacter?.classList.remove("is-engaged");
+  link.addEventListener("pointerenter", engage);
+  link.addEventListener("pointerleave", release);
+  link.addEventListener("focus", engage);
+  link.addEventListener("blur", release);
+});
 
 const sections = [...document.querySelectorAll("main section[id]")];
 const navLinks = [...document.querySelectorAll("nav a")];
