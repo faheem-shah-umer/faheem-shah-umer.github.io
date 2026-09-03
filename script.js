@@ -262,13 +262,23 @@ if (stackBookShelf && stackReader) {
 
 const sections = [...document.querySelectorAll("main section[id]")];
 const navLinks = [...document.querySelectorAll("nav a")];
+const primaryNav = document.querySelector(".site-header nav");
+const compactNavigation = window.matchMedia("(max-width: 980px)");
+let currentNavTarget = "#home";
 const sectionObserver = new IntersectionObserver((entries) => {
   const visible = entries.filter((entry) => entry.isIntersecting).sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
   if (!visible) return;
+  const target = `#${visible.target.id}`;
+  const activeLink = navLinks.find((link) => link.getAttribute("href") === target);
   navLinks.forEach((link) => {
-    const active = link.getAttribute("href") === `#${visible.target.id}`;
+    const active = link === activeLink;
     if (active) link.setAttribute("aria-current", "true"); else link.removeAttribute("aria-current");
   });
+  if (compactNavigation.matches && activeLink && target !== currentNavTarget) {
+    const left = activeLink.offsetLeft - (primaryNav.clientWidth - activeLink.offsetWidth) / 2;
+    primaryNav.scrollTo({ left: Math.max(0, left), behavior: "smooth" });
+  }
+  currentNavTarget = target;
 }, { rootMargin: "-35% 0px -55%", threshold: [0,.2,.5] });
 sections.forEach((section) => sectionObserver.observe(section));
 
