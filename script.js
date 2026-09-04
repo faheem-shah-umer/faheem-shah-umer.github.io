@@ -6,8 +6,6 @@ const experienceSection = document.querySelector("#experience");
 
 if (main && projectsSection && experienceSection) {
   main.insertBefore(experienceSection, projectsSection);
-  const projectDivider = experienceSection.querySelector(".character-divider-projects");
-  if (projectDivider) projectsSection.prepend(projectDivider);
 }
 
 const languageButton = document.querySelector("[data-language-toggle]");
@@ -78,20 +76,6 @@ const revealObserver = new IntersectionObserver((entries, observer) => {
   });
 }, { threshold: .12 });
 document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
-
-const characterEntrances = [
-  { anchor: document.querySelector("#projects"), character: document.querySelector(".character-divider-projects") }
-].filter(({ anchor, character }) => anchor && character);
-
-const characterObserver = new IntersectionObserver((entries, observer) => {
-  entries.forEach((entry) => {
-    if (!entry.isIntersecting) return;
-    const entrance = characterEntrances.find(({ anchor }) => anchor === entry.target);
-    entrance?.character.classList.add("is-visible");
-    observer.unobserve(entry.target);
-  });
-}, { rootMargin: "0px 0px -14%", threshold: .02 });
-characterEntrances.forEach(({ anchor }) => characterObserver.observe(anchor));
 
 const desktopStackHover = window.matchMedia("(min-width: 981px) and (hover: hover) and (pointer: fine)");
 const stackCards = [...document.querySelectorAll(".stack-card")];
