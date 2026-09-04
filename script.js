@@ -40,6 +40,31 @@ languageButton.addEventListener("click", () => { applyLanguage(languageButton.da
 applyLanguage(localStorage.getItem("portfolio-language") === "de" ? "de" : "en");
 document.querySelector("[data-year]").textContent = new Date().getFullYear();
 
+const resumeUpdated = document.querySelector("[data-resume-updated]");
+const resumeHistoryUrl = "https://api.github.com/repos/faheem-shah-umer/faheem-shah-umer.github.io/commits?path=assets%2FFaheemResume.pdf&per_page=1";
+
+async function updateResumeDate() {
+  if (!resumeUpdated) return;
+  try {
+    const response = await fetch(resumeHistoryUrl, {
+      headers: { Accept: "application/vnd.github+json" }
+    });
+    if (!response.ok) return;
+    const [latestChange] = await response.json();
+    const committedAt = latestChange?.commit?.committer?.date;
+    if (!committedAt) return;
+    const date = new Date(committedAt);
+    const options = { month: "long", year: "numeric", timeZone: "Europe/Berlin" };
+    resumeUpdated.dataset.en = `PDF · Updated ${new Intl.DateTimeFormat("en", options).format(date)}`;
+    resumeUpdated.dataset.de = `PDF · Aktualisiert ${new Intl.DateTimeFormat("de", options).format(date)}`;
+    resumeUpdated.textContent = resumeUpdated.dataset[root.lang];
+  } catch {
+    // Keep the verified fallback date when GitHub is unavailable.
+  }
+}
+
+updateResumeDate();
+
 const header = document.querySelector("[data-header]");
 const updateHeader = () => header.classList.toggle("is-scrolled", window.scrollY > 40);
 updateHeader();
