@@ -241,3 +241,26 @@ footer { min-height: 120px; display: grid; grid-template-columns: auto 1fr; alig
   .hero-copy { top: 47rem; bottom: auto; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation: none !important; transition: none !important; }.reveal, .character-divider-art, .stack-page { opacity: 1 !important; transform: none !important; translate: none !important; rotate: none !important; scale: none !important; } }
+
+.project-step-rag { background: linear-gradient(145deg,#eef8f6,#dff1ed); }
+.step-rag-visual { min-height: 520px; display: flex; flex-wrap: wrap; align-content: center; justify-content: center; align-items: center; gap: 1rem; margin: 2.5rem; padding: clamp(1.4rem,4vw,3rem); border: 1px solid rgba(31,83,78,.14); border-radius: 38px; background: radial-gradient(circle at 50% 35%,rgba(255,255,255,.94),rgba(255,255,255,.55)); box-shadow: inset 0 1px 0 rgba(255,255,255,.85),0 24px 55px rgba(26,78,73,.09); }
+.step-rag-stage { width: min(132px,27%); min-height: 142px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: .55rem; padding: 1rem .7rem; border: 1px solid rgba(31,83,78,.13); border-radius: 24px; background: rgba(255,255,255,.72); text-align: center; box-shadow: 0 16px 32px rgba(30,74,70,.08); }
+.step-rag-stage img { width: 38px; height: 38px; object-fit: contain; }
+.step-rag-stage span { font: 700 .75rem/1.2 "Onest",sans-serif; }
+.step-rag-stage small { color: #55706d; font: 500 .62rem/1.35 "Onest",sans-serif; }
+.step-rag-arrow { color: #418d84; font-size: 1.5rem; }
+.step-rag-query { flex: 0 0 min(470px,100%); min-height: 72px; display: flex; align-items: center; justify-content: center; gap: .8rem; margin-top: 1rem; padding: 1rem 1.3rem; border-radius: 999px; color: var(--white); background: #123f3d; box-shadow: 0 18px 36px rgba(18,63,61,.2); }
+.step-rag-query img { width: 30px; height: 30px; object-fit: contain; filter: brightness(0) invert(1); }
+.step-rag-query span { font: 600 .76rem/1.35 "Onest",sans-serif; text-align: center; }
+.contact-action-label { display: inline-flex; align-items: center; gap: .7rem; }
+.contact-action-label img { width: 24px; height: 24px; flex: 0 0 auto; object-fit: contain; }
+.button-outline .contact-action-label img[src$="git.svg"] { filter: brightness(0) invert(1); }
+
+@media (max-width: 700px) {
+  .step-rag-visual { min-height: 390px; gap: .55rem; margin: .8rem; padding: 1.2rem .8rem; border-radius: 27px; }
+  .step-rag-stage { width: 29%; min-height: 126px; padding: .8rem .35rem; }
+  .step-rag-stage span { font-size: .64rem; }
+  .step-rag-stage small { font-size: .54rem; }
+  .step-rag-arrow { font-size: 1rem; }
+  .step-rag-query { min-height: 64px; margin-top: .5rem; }
+}
