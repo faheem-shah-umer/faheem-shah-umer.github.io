@@ -96,6 +96,8 @@ h1 em, h2 em { font-family: "PT Serif", Georgia, serif; font-weight: 700; }
 .timeline-logo-link:focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
 .timeline-brand img { width: 112px; height: 56px; object-fit: contain; }
 .timeline-brand .timeline-year { text-align: center; line-height: 1.25; }
+.thesis-title { font-style: italic; }
+.project .thesis-title { font-size: 1rem; line-height: 1.5; letter-spacing: 0; }
 
 .stack-section { background: var(--paper); }
 .stack-library-intro, .stack-library, .stack-reader-dialog { display: none; }
